@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
+  "webpack-dev-server": "2.9.7",
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
