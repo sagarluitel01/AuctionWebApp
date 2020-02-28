@@ -1,0 +1,89 @@
+<body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Colorado Aquarium Society</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" (click)="onLogout()"><img src="../../../assets/icons/log-out.svg">  Sign out</a>
+        </li>
+      </ul>
+    </nav>
+  
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active">
+                  <img src="../../../assets/icons/home-blue.svg">
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="../../../assets/icons/file-black.svg">
+                  Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/cart">
+                  <img src="../../../assets/icons/shopping-cart-black.svg">
+                  Cart
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/user-profile">
+                  <img src="../../../assets/icons/user-black.svg">
+                  Profile
+                </a>
+              </li>
+              <div *ngIf="staff">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/admin">
+                    <img src="../../../assets/icons/settings-black.svg">
+                    Admin
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </nav>
+  
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <span>Welcome! <a routerLink="/user-profile">{{ userDetails.firstName }}</a> [ {{ userDetails.type }} ]</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+              <button type="button" class="btn btn-primary" routerLink="/">
+                <img src="../../../assets/icons/file-white.svg"> 
+                Orders
+              </button>
+              <button type="button" class="btn btn-primary" routerLink="/cart">
+                <img src="../../../assets/icons/shopping-cart-white.svg"> 
+                Cart
+              </button>
+              <button type="button" class="btn btn-primary" routerLink="/user-profile">
+                <img src="../../../assets/icons/user-white.svg">
+                Profile
+              </button>
+              <div *ngIf="staff">
+                <button type="button" class="btn btn-primary" routerLink="/admin">
+                  <img src="../../../assets/icons/settings-white.svg">
+                  Admin
+                </button>
+              </div>
+          </div>
+  
+          <div class="flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <app-auctions-list></app-auctions-list> 
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>

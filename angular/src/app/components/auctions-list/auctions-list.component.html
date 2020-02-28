@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+    <h3>Upcoming Auction</h3>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <button (click)="refresh()" class="btn-refresh">
+          <img src="../../../assets/icons/refresh-cw.svg">
+          Refresh
+        </button>
+      </div>
+    </div>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="card-container">
+    <div class="row">
+      <div *ngFor="let auc of auctionsInfo" routerLink="/auctions/{{ auc._id }}" class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="../../../assets/logo.png" class="card-img border">
+ 
+            <div class="card-body text-center">
+              <h4 class="card-title"><b>{{ auc.auctionName }}</b></h4>
+              <p class="card-text"><b>Address:</b></p>
+              <p class="card-text">{{ auc.address }}</p>
+              <p class="card-text"><b>Date and Time:</b></p>
+              <p class="card-text">{{ auc.dateTime| date: "medium" }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
