@@ -6,7 +6,7 @@ const express         = require('express'); // call express
 const bodyParser      = require('body-parser'); // call body-parser
 const cors            = require('cors'); // call cors
 const passport        = require('passport'); // call passport
-
+const path            = require("path");
 // call the files
 require('./server/config/db'); // call db.js to connect to mongo
 const config = require('./server/config/config'); // get config file
