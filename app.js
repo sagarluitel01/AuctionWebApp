@@ -53,7 +53,7 @@ app.use((err, req, res, next) => {
     }
 });
 
-const port = process.env.PORT || 8080;
+
 // START THE SERVER
 //=====================================
-app.listen(port, () => console.log('Server started at port: ' + config.port));
+app.listen(config.port, () => console.log('Server started at port: ' + config.port));
